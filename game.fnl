@@ -1,4 +1,4 @@
-(local repl (require "lib.stdio"))
+(local repl (require "lib.repl"))
 
 (var color [0 0 0])
 

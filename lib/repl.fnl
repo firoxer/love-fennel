@@ -23,11 +23,11 @@
   (event channel) (looper event channel))
 
 {:start (fn start-repl []
-          (let [code (love.filesystem.read "lib/stdio.fnl")
+          (let [code (love.filesystem.read "lib/repl.fnl")
                 luac (if code
                          (love.filesystem.newFileData
                           (fennel.compileString code) "io")
-                         (love.filesystem.read "lib/stdio.lua"))
+                         (love.filesystem.read "lib/repl.lua"))
                 thread (love.thread.newThread luac)
                 io-channel (love.thread.newChannel)
                 coro (coroutine.create fennel.repl)
