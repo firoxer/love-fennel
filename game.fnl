@@ -18,6 +18,10 @@
                       :g (time->color (+ time (* math.pi 0.667)))
                       :b (time->color (+ time (* math.pi 1.333)))})))
 
+(fn love.keypressed [key]
+  (when (= "escape" key)
+    (love.event.quit)))
+
 (local font (love.graphics.newFont 32))
 
 (fn love.draw []
